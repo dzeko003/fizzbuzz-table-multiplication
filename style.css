@@ -1,0 +1,164 @@
+:root {
+  --texte: #1f2937;
+  --texte-clair: #6b7280;
+  --fond: #f9fafb;
+  --carte: #ffffff;
+  --rayon: 12px;
+  --espace: 1rem;
+
+  --bleu-nombre: #e5e7eb;
+  --bleu-nombre-texte: #1f2937;
+  --vert-fizz: #10b981;
+  --orange-buzz: #f59e0b;
+  --violet-fizzbuzz: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--fond);
+  padding: var(--espace);
+}
+
+.entete {
+  max-width: 960px;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+}
+
+.entete h1 {
+  font-size: 1.6rem;
+}
+
+.sous-titre {
+  color: var(--texte-clair);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navigation a {
+  color: var(--texte);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: var(--carte);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navigation a:hover {
+  background: var(--violet-fizzbuzz);
+  color: #ffffff;
+}
+
+.carte {
+  background: var(--carte);
+  border-radius: var(--rayon);
+  padding: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.carte h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.grille-fizzbuzz {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .grille-fizzbuzz {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  background: var(--bleu-nombre);
+  color: var(--bleu-nombre-texte);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+
+.case:hover {
+  transform: scale(1.08);
+  cursor: default;
+}
+
+.fizz {
+  background: var(--vert-fizz);
+  color: #ffffff;
+}
+
+.buzz {
+  background: var(--orange-buzz);
+  color: #ffffff;
+}
+
+.fizzbuzz {
+  background: var(--violet-fizzbuzz);
+  color: #ffffff;
+}
+
+/* ########################## Tables de multiplication ############################# */
+
+.conteneur-tables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.carte-table {
+  flex: 1 1 140px;
+  background: var(--fond);
+  border-radius: 8px;
+  padding: 0.85rem;
+}
+
+.carte-table h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.carte-table ul {
+  list-style: none;
+}
+
+.carte-table li {
+  font-size: 0.9rem;
+  padding: 0.15rem 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+}
